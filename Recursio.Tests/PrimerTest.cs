@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace Recursio.Tests
 {
-    [TestFixture]
+    [TestFixture, Description("Тестирование нахождения простых множиетелей числа")]
     public class PrimerTest
     {
         public Primer Primer;
@@ -21,7 +21,7 @@ namespace Recursio.Tests
             Console.WriteLine($"Вызовов: {Primer.CallsAmount}");
         }
 
-        [Test]
+        [Test, Description("Тестирование числа 1")]
         public void OneTest()
         {
             var expected = new SortedSet<uint> { 1 };
@@ -32,7 +32,7 @@ namespace Recursio.Tests
             Assert.AreEqual(expected, got);
         }
 
-        [Test]
+        [Test, Description("Тестирование некоторого заведомо простого числа")]
         public void PrimeTest()
         {
             var expected = new SortedSet<uint> { 1, 41 };
@@ -43,7 +43,7 @@ namespace Recursio.Tests
             Assert.AreEqual(expected, got);
         }
 
-        [Test]
+        [Test, Description("Тестирование не простого числа, у которого много простых множителей")]
         public void ComplexTest()
         {
             var expected = new SortedSet<uint> { 1, 2, 3, 5, 7, 11 };
@@ -54,7 +54,7 @@ namespace Recursio.Tests
             Assert.AreEqual(expected, got);
         }
 
-        [Test]
+        [Test, Description("Тестирование числа 0")]
         public void ZeroTest()
         {
             Assert.Throws<ArgumentException>(() => Primer.GetPrimes(0));
