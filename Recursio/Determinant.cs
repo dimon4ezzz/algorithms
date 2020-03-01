@@ -26,9 +26,10 @@ namespace Recursio
         /// Рекурсивно считает определитель матрицы.
         /// </summary>
         /// <param name="matrix">двумерная квадратная матрица</param>
+        /// <param name="checkingRow">строка, по которой производится разложение</param>
         /// <returns>определитель матрицы</returns>
         /// <exception cref="ArgumentException">кидается, если матрица пуста или не квадратна</exception>
-        public double GetDeterminant(double[,] matrix)
+        public double GetDeterminant(double[,] matrix, uint checkingRow = 0)
         {
             // 
             CallsAmount++;
@@ -45,6 +46,9 @@ namespace Recursio
             // сохраняем размер матрицы
             var length = matrix.GetLength(0);
 
+            // если строка разложения находится за пределами матрицы, кидает исключение
+            if (checkingRow >= length) throw new ArgumentOutOfRangeException("checking row is out of bounds", "checkingRow");
+
             // создаём пустую матрицу для минора
             var matrixTemp = new double[length - 1, length - 1];
 
@@ -54,20 +58,25 @@ namespace Recursio
             // идём по первой строке
             for (uint a = 0; a < length; a++)
             {
-                // идём по каждой строке, кроме первой
-                for (uint i = 1, rowIterator = 0; i < length; i++, rowIterator++)
+                // идём по каждой строке
+                for (uint i = 0, rowIterator = 0; i < length; i++)
                 {
-                    // идём по каждому столбцу
-                    for (uint j = 0, columnIterator = 0; j < length; j++)
-                    {
-                        // избегаем столбца выбранного элемента
-                        if (j != a)
+                    // избегаем выбранной строки
+                    if (i != checkingRow) {
+                        // идём по каждому столбцу
+                        for (uint j = 0, columnIterator = 0; j < length; j++)
                         {
-                            // добавляем в матрицу минора этот элемент
-                            matrixTemp[rowIterator, columnIterator] = matrix[j, i];
-                            // идём на следующий столбец
-                            columnIterator++;
+                            // избегаем столбца выбранного элемента
+                            if (j != a)
+                            {
+                                // добавляем в матрицу минора этот элемент
+                                matrixTemp[rowIterator, columnIterator] = matrix[j, i];
+                                // идём на следующий столбец
+                                columnIterator++;
+                            }
                         }
+                        // идём на следующую строку
+                        rowIterator++;
                     }
                 }
 

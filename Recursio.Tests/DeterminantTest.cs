@@ -74,5 +74,13 @@ namespace Recursio.Tests
             var matrix = new double[1, 2];
             Assert.Throws<ArgumentException>(() => Determinant.GetDeterminant(matrix));
         }
+
+        [Test, Description("Тестирование выхода за пределы матрицы")]
+        public void OutOfBoundsTest()
+        {
+            const uint size = 2;
+            var matrix = new double[size, size];
+            Assert.Throws<ArgumentOutOfRangeException>(() => Determinant.GetDeterminant(matrix, size));
+        }
     }
 }
