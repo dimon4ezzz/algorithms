@@ -15,12 +15,12 @@ namespace Recursio
         /// <summary>
         /// Типовой определитель.
         /// </summary>
-        public Determinant() => ResetDeterminant();
+        public Determinant() => ResetCounter();
 
         /// <summary>
         /// Сбрасывает счётчик вызовов функции.
         /// </summary>
-        public void ResetDeterminant() => CallsAmount = 0;
+        public void ResetCounter() => CallsAmount = 0;
 
         /// <summary>
         /// Рекурсивно считает определитель матрицы.
