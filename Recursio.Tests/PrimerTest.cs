@@ -13,7 +13,6 @@ namespace Recursio.Tests
         public void Init()
         {
             Primer = new Primer();
-            Primer.Verbose = true;
         }
 
         [TearDown]
@@ -47,9 +46,9 @@ namespace Recursio.Tests
         [Test]
         public void ComplexTest()
         {
-            var expected = new SortedSet<uint> { 1, 2, 3 };
+            var expected = new SortedSet<uint> { 1, 2, 3, 5, 7, 11 };
 
-            uint number = 6;
+            uint number = 2310;
             var got = Primer.GetPrimes(number);
 
             Assert.AreEqual(expected, got);
