@@ -21,7 +21,7 @@ namespace Recursio
 
             if (number == 1) return new SortedSet<uint> { 1 };
 
-            uint center = (uint) Math.Ceiling(Math.Sqrt(number));
+            uint center = (uint) Math.Floor(Math.Sqrt(number));
             Log($"`center` is {center}");
             
             var set = new SortedSet<uint>();
