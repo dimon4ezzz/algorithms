@@ -31,7 +31,7 @@ namespace Recursio
         /// <exception cref="ArgumentException">кидается, если матрица пуста или не квадратна</exception>
         public double GetDeterminant(double[,] matrix, uint checkingRow = 0)
         {
-            // 
+            // увеличиваем количество вызовов этой функции
             CallsAmount++;
 
             // если матрица пуста, кидает исключение
@@ -40,7 +40,7 @@ namespace Recursio
             // если в матрице лишь один элемент, передаёт лишь его
             if (matrix.Length == 1) return matrix[0, 0];
 
-            // если матрица неквадратная — кидает исключение
+            // если матрица неквадратная, кидает исключение
             if (matrix.GetLength(0) != matrix.GetLength(1)) throw new ArgumentException("matrix cannot be non-square");
 
             // сохраняем размер матрицы
