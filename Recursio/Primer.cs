@@ -27,7 +27,7 @@ namespace Recursio
         /// <param name="number">число для разложения</param>
         /// <returns>множество простых множителей</returns>
         /// <exception cref="ArgumentException">кидается, если число — 0
-        public SortedSet<uint> GetPrimes(uint number)
+        public List<uint> GetPrimes(uint number)
         {
             // увеличиваем количество вызовов этой функции
             CallsAmount++;
@@ -36,15 +36,15 @@ namespace Recursio
             if (number == 0) throw new ArgumentException("0 has no prime dividers", "number");
 
             // если число — 1, это и есть простой множитель
-            if (number == 1) return new SortedSet<uint> { 1 };
+            if (number == 1) return new List<uint> { 1 };
 
             // находим максимальный множитель,
             // т.н. «центр», который может быть у числа,
             // например, 120 не может иметь множителей больше 10 (121 = 11×11)
             uint center = (uint) Math.Floor(Math.Sqrt(number));
             
-            // создаём пустое множество
-            var set = new SortedSet<uint>();
+            // создаём пустой список
+            var list = new List<uint>();
 
             // проходим по всем числам от 2 до центра
             for (uint i = 2; i <= center; i++)
@@ -54,16 +54,16 @@ namespace Recursio
                 {
                     // все его простые множители являются
                     // множителями искомого числа
-                    set.UnionWith(GetPrimes(i));
+                    list.AddRange(GetPrimes(i));
                 }
             }
 
             // если никаких чисел не добавилось
             // значит проверяемое число — простое
-            if (set.Count == 0) set.Add(number);
+            if (list.Count == 0) list.Add(number);
 
             // полученное множество и есть множество простых множителей
-            return set;
+            return list;
         }
     }
 }
