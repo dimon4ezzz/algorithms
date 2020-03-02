@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 
@@ -25,12 +24,10 @@ namespace Recursio.Tests
         [Test, Description("Тестирование числа 1")]
         public void OneTest()
         {
-            var expected = new List<uint> { 1 };
-
             uint number = 1;
             var got = Primer.GetPrimes(number);
 
-            Assert.AreEqual(expected, got);
+            Assert.AreEqual(0, got.Count);
         }
 
         [Test, Description("Тестирование некоторого заведомо простого числа")]
