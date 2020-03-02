@@ -35,7 +35,7 @@ namespace Recursio.Tests
         [Test, Description("Тестирование некоторого заведомо простого числа")]
         public void PrimeTest()
         {
-            var expected = new SortedSet<uint> { 1, 41 };
+            var expected = new SortedSet<uint> { 41 };
 
             uint number = 41;
             var got = Primer.GetPrimes(number);
@@ -46,7 +46,7 @@ namespace Recursio.Tests
         [Test, Description("Тестирование не простого числа, у которого много простых множителей")]
         public void ComplexTest()
         {
-            var expected = new SortedSet<uint> { 1, 2, 3, 5, 7, 11 };
+            var expected = new SortedSet<uint> { 2, 3, 5, 7, 11 };
 
             uint number = 2310;
             var got = Primer.GetPrimes(number);
