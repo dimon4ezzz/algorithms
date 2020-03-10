@@ -11,7 +11,6 @@ namespace Recursio
         /// <summary>
         /// Количество вызовов функции получения простых множителей.
         /// </summary>
-        /// <value></value>
         public uint CallsAmount { get; private set; }
 
         public Primer() => ResetCounter();
