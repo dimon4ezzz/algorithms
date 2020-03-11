@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recursio", "Recursio\Recurs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recursio.Tests", "Recursio.Tests\Recursio.Tests.csproj", "{72AE6114-EE4F-49DF-8DE0-28126E4B4BD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmark", "Benchmark\Benchmark.csproj", "{8338AB10-2B35-44CD-A5AB-B0F2C02B6971}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{72AE6114-EE4F-49DF-8DE0-28126E4B4BD7}.Release|x64.Build.0 = Release|Any CPU
 		{72AE6114-EE4F-49DF-8DE0-28126E4B4BD7}.Release|x86.ActiveCfg = Release|Any CPU
 		{72AE6114-EE4F-49DF-8DE0-28126E4B4BD7}.Release|x86.Build.0 = Release|Any CPU
+		{8338AB10-2B35-44CD-A5AB-B0F2C02B6971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8338AB10-2B35-44CD-A5AB-B0F2C02B6971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8338AB10-2B35-44CD-A5AB-B0F2C02B6971}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8338AB10-2B35-44CD-A5AB-B0F2C02B6971}.Debug|x64.Build.0 = Debug|Any CPU
+		{8338AB10-2B35-44CD-A5AB-B0F2C02B6971}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8338AB10-2B35-44CD-A5AB-B0F2C02B6971}.Debug|x86.Build.0 = Debug|Any CPU
+		{8338AB10-2B35-44CD-A5AB-B0F2C02B6971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8338AB10-2B35-44CD-A5AB-B0F2C02B6971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8338AB10-2B35-44CD-A5AB-B0F2C02B6971}.Release|x64.ActiveCfg = Release|Any CPU
+		{8338AB10-2B35-44CD-A5AB-B0F2C02B6971}.Release|x64.Build.0 = Release|Any CPU
+		{8338AB10-2B35-44CD-A5AB-B0F2C02B6971}.Release|x86.ActiveCfg = Release|Any CPU
+		{8338AB10-2B35-44CD-A5AB-B0F2C02B6971}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
