@@ -24,7 +24,7 @@ namespace Recursio.Tests
         [Test, Description("Тестирование числа 1")]
         public void OneTest()
         {
-            uint number = 1;
+            ulong number = 1;
             var got = Primer.GetPrimes(number);
 
             Assert.AreEqual(0, got.Count);
@@ -33,9 +33,9 @@ namespace Recursio.Tests
         [Test, Description("Тестирование некоторого заведомо простого числа")]
         public void PrimeTest()
         {
-            var expected = new List<uint> { 41 };
+            var expected = new List<ulong> { 41 };
 
-            uint number = 41;
+            ulong number = 41;
             var got = Primer.GetPrimes(number);
 
             Assert.AreEqual(expected, got);
@@ -44,9 +44,9 @@ namespace Recursio.Tests
         [Test, Description("Тестирование не простого числа, у которого много простых множителей")]
         public void ComplexTest()
         {
-            var expected = new List<uint> { 2, 3, 5, 7, 11 };
+            var expected = new List<ulong> { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 };
 
-            uint number = 2310;
+            ulong number = 614_889_782_588_491_410;
             var got = Primer.GetPrimes(number);
 
             Assert.AreEqual(expected, got);
@@ -55,9 +55,9 @@ namespace Recursio.Tests
         [Test, Description("Тестирование большого количества одинаковых простых множителей")]
         public void LotOfMultipliersTest()
         {
-            var expected = new List<uint> { 2, 2, 2, 3 };
+            var expected = new List<ulong> { 2, 2, 2, 3 };
 
-            uint number = 24;
+            ulong number = 24;
             var got = Primer.GetPrimes(number);
 
             Assert.AreEqual(expected, got);

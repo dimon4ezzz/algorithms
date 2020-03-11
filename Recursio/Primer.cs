@@ -26,7 +26,7 @@ namespace Recursio
         /// <param name="number">число для разложения</param>
         /// <returns>множество простых множителей</returns>
         /// <exception cref="ArgumentException">кидается, если число — 0
-        public List<uint> GetPrimes(uint number)
+        public List<ulong> GetPrimes(ulong number)
         {
             // увеличиваем количество вызовов этой функции
             CallsAmount++;
@@ -35,10 +35,10 @@ namespace Recursio
             if (number == 0) throw new ArgumentException("0 has no prime dividers", "number");
 
             // если число — 1, никаких простых множителей у него нет
-            if (number == 1) return new List<uint>();
+            if (number == 1) return new List<ulong>();
 
             // создаём пустой список
-            var list = new List<uint>();
+            var list = new List<ulong>();
 
             // начинаем смотреть делители с 2
             uint multiplier = 2;
