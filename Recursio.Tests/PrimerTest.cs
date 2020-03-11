@@ -55,9 +55,9 @@ namespace Recursio.Tests
         [Test, Description("Тестирование большого количества одинаковых простых множителей")]
         public void LotOfMultipliersTest()
         {
-            var expected = new List<ulong> { 2, 2, 2, 3 };
+            var expected = new List<ulong> { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,2, 2, 2, 2, 2, 2, 2 };
 
-            ulong number = 24;
+            ulong number = 9_223_372_036_854_775_808;
             var got = Primer.GetPrimes(number);
 
             Assert.AreEqual(expected, got);
