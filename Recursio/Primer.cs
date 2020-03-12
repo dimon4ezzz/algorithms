@@ -6,12 +6,12 @@ namespace Recursio
     /// <summary>
     /// Класс для получения простых множителей числа.
     /// </summary>
-    public class Primer
+    public class Primer : IRecurced
     {
         /// <summary>
         /// Количество вызовов функции получения простых множителей.
         /// </summary>
-        public uint CallsAmount { get; private set; }
+        public ulong CallsAmount { get; private set; }
 
         public Primer() => ResetCounter();
 

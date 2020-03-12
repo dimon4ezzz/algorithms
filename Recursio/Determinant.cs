@@ -5,12 +5,12 @@ namespace Recursio
     /// <summary>
     /// Класс для расчёта определителя рекурсивным способом.
     /// </summary>
-    public class Determinant
+    public class Determinant : IRecurced
     {
         /// <summary>
         /// Количество вызовов функции расчёта определителя.
         /// </summary>
-        public uint CallsAmount { get; private set; }
+        public ulong CallsAmount { get; private set; }
 
         /// <summary>
         /// Типовой определитель.

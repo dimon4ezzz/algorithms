@@ -5,12 +5,12 @@ namespace Recursio
     /// <summary>
     /// Рекурсивный расчёт строк-выражений.
     /// </summary>
-    public class Expressioner
+    public class Expressioner : IRecurced
     {
         /// <summary>
         /// Количество вызовов функции получения простых множителей.
         /// </summary>
-        public uint CallsAmount { get; private set; }
+        public ulong CallsAmount { get; private set; }
 
         public Expressioner() => ResetCounter();
 
