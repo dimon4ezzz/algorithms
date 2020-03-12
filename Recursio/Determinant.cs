@@ -12,9 +12,6 @@ namespace Recursio
         /// </summary>
         public ulong CallsAmount { get; private set; }
 
-        /// <summary>
-        /// Типовой определитель.
-        /// </summary>
         public Determinant() => ResetCounter();
 
         /// <summary>
