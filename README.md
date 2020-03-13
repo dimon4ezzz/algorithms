@@ -1,5 +1,5 @@
 ![.NET Core](https://github.com/dimon4ezzz/algorithms/workflows/.NET%20Core/badge.svg?event=push)
-# Некоторые алгоритмы на `C#`
+# Некоторые алгоритмы на C#
 
 Функциональность:
 - [x] рекурсивный расчёт определителя матрицы
