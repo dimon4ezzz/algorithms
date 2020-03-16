@@ -119,7 +119,7 @@ namespace Sorting
             }
 
             // поменять местами маркерный элемент и конечный
-            sortingList.Swap(marker, end);
+            sortingList.Swap(swapAmount, end);
             return swapAmount;
         }
 
