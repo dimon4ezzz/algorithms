@@ -102,8 +102,8 @@ namespace Sorting
         /// <returns>маркер — некоторые элементы меньше, некоторые больше</returns>
         private uint GetMarker<T>(List<T> sortingList, uint start, uint end) where T : IComparable
         {
-            // предположим, маркер стоит в начале подмассива
-            uint marker = start;
+            // маркер определяет место между малыми числами и большими
+            uint swapAmount = start;
 
             for (uint i = start; i < end; i++)
             {
@@ -111,16 +111,16 @@ namespace Sorting
                 if (IsLess(sortingList, i, end))
                 {
                     // перенести его на место маркера
-                    sortingList.Swap(i, marker);
+                    sortingList.Swap(i, swapAmount);
 
                     // перенести маркер далее
-                    marker++;
+                    swapAmount++;
                 }
             }
 
             // поменять местами маркерный элемент и конечный
             sortingList.Swap(marker, end);
-            return marker;
+            return swapAmount;
         }
 
         private bool IsLess<T>(List<T> list, uint comparedIndex, uint comparingIndex) where T : IComparable =>
